@@ -3,7 +3,7 @@ layout: plugin
 
 id: dragon_order
 title: OctoPrint-DragonOrder
-description: Plugin that allows the re-ordering of sidebar and tabs by dragging them into desired location within the UI.
+description: Plugin that allows the re-ordering of navbar, sidebar, and tabs by dragging them into desired location within the UI.
 author: jneilliii
 license: AGPLv3
 
@@ -21,7 +21,7 @@ tags:
 ---
 # OctoPrint-DragonOrder
 
-Plugin that allows the re-ordering of sidebar and tabs by dragging them into desired location within the UI.
+Plugin that allows the re-ordering of navbar, sidebar, and tabs by dragging them into desired location within the UI.
 
 **Note:** Plugin name is a play on words similar to `Drag and Drop` being misheard as `Dragon Drop`.
 

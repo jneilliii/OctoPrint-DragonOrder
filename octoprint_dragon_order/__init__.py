@@ -12,7 +12,8 @@ class dragon_orderPlugin(octoprint.plugin.SettingsPlugin,
 	def get_settings_defaults(self):
 		return dict(
 			tab_order = [],
-			sidebar_order = []
+			sidebar_order = [],
+			navbar_order = []
 		)
 
 	def on_settings_save(self, data):
@@ -29,6 +30,12 @@ class dragon_orderPlugin(octoprint.plugin.SettingsPlugin,
 			self._logger.debug('New Sidebar Order: %s' % data["sidebar_order"])
 			if old_sidebar_order != data["sidebar_order"]:
 				self._settings.global_set(["appearance","components","order","sidebar"], data["sidebar_order"])
+		if "navbar_order" in data:
+			old_navbar_order = self._settings.global_get(["appearance","components","order","navbar"])
+			self._logger.debug('Old Navbar Order: %s' % old_navbar_order)
+			self._logger.debug('New Navbar Order: %s' % data["navbar_order"])
+			if old_navbar_order != data["navbar_order"]:
+				self._settings.global_set(["appearance","components","order","navbar"], data["navbar_order"])
 
 	##~~ AssetPlugin mixin
 
