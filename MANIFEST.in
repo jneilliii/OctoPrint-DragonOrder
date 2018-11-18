@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_draggable_ui/templates *
+recursive-include octoprint_draggable_ui/translations *
+recursive-include octoprint_draggable_ui/static *
