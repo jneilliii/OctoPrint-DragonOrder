@@ -51,7 +51,17 @@ $(function() {
 						});
 					self.settingsViewModel.settings.plugins.dragon_order.sidebar_order(new_sidebar_order);
 					self.settingsViewModel.saveData();
-					console.log(new_sidebar_order);
+				}});
+				
+			// Make the navbar draggable.
+			$('#navbar > div > div > div > ul.nav').sortable({axis: 'x', update:function(){
+					var new_navbar_order = [];
+					$.each($(this).sortable('toArray'), function(index, value){
+							var new_value = value.replace(/^(navbar_)?(.+)$/g,'$2');
+							new_navbar_order.push(new_value);
+						});
+					self.settingsViewModel.settings.plugins.dragon_order.navbar_order(new_navbar_order);
+					self.settingsViewModel.saveData();					
 				}});
 		}
 	}
