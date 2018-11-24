@@ -43,7 +43,7 @@ $(function() {
 				}});
 			
 			// Make the sidebar draggable.
-			$('body > div > div.container.octoprint-container > div.row > div.accordion.span4').sortable({axis:'y',update:function(){
+			$('body > div > div.container.octoprint-container > div.row > div.accordion.span4').sortable({axis:'y',handle: 'div.accordion-heading', update:function(){
 					var new_sidebar_order = [];
 					$.each($(this).sortable('toArray'), function(index, value){
 							var new_value = value.replace(/^(sidebar_)?(.+)_wrapper$/g,'$2');
