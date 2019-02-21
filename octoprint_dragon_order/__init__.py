@@ -65,6 +65,7 @@ class dragon_orderPlugin(octoprint.plugin.SettingsPlugin,
 		)
 
 __plugin_name__ = "Dragon Order"
+__plugin_pythoncompat__ = ">=2.7,<4"
 
 def __plugin_load__():
 	global __plugin_implementation__
