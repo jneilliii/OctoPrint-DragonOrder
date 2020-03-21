@@ -23,14 +23,14 @@ $(function() {
 							type: 'info',
 							hide: false,
 							buttons: {
-								closer: false,
+								closer: $('html').attr('id') == 'touch',
 								sticker: false
 							},
 							stack: stack_bottomright,
 							addclass: 'stack-bottomright',
 							});
 					}
-						
+
 					var new_tab_order = [];
 					$.each($('#tabs').sortable('toArray'), function(index, value){
 							if(value !== ''){
@@ -41,7 +41,7 @@ $(function() {
 					self.settingsViewModel.settings.plugins.dragon_order.tab_order(new_tab_order);
 					self.settingsViewModel.saveData();
 				}});
-			
+
 			// Make the sidebar draggable.
 			$('body > div > div.container.octoprint-container > div.row > div.accordion.span4').sortable({axis:'y',handle: 'div.accordion-heading', update:function(){
 					var new_sidebar_order = [];
@@ -52,7 +52,7 @@ $(function() {
 					self.settingsViewModel.settings.plugins.dragon_order.sidebar_order(new_sidebar_order);
 					self.settingsViewModel.saveData();
 				}});
-				
+
 			// Make the navbar draggable.
 			$('#navbar > div > div > div > ul.nav').sortable({axis: 'x', update:function(){
 					var new_navbar_order = [];
@@ -61,7 +61,7 @@ $(function() {
 							new_navbar_order.push(new_value);
 						});
 					self.settingsViewModel.settings.plugins.dragon_order.navbar_order(new_navbar_order);
-					self.settingsViewModel.saveData();					
+					self.settingsViewModel.saveData();
 				}});
 		}
 	}
