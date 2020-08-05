@@ -2,6 +2,8 @@
 
 Plugin that allows the re-ordering of the navbar, sidebar, and tabs by dragging them into desired location within the UI.
 
+**Warning:** OctoPrint 1.4.1 isolated the gcode viewer into it's own plugin and as a result you may have to re-order that tab again after upgrading.
+
 **Note:** Plugin name is a play on words similar to `Drag and Drop` being misheard as `Dragon Drop`.
 
 ## Setup
