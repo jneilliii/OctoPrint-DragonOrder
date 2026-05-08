@@ -45,6 +45,11 @@ class dragon_orderPlugin(octoprint.plugin.SettingsPlugin,
 			css=["css/jquery-ui.css"]
 		)
 
+	##~~ SettingsPlugin mixin
+
+	def is_template_autoescaped(self):
+		True
+
 	##~~ Softwareupdate hook
 
 	def get_update_information(self):
