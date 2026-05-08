@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "OctoPrint-DragonOrder"
-version = "0.1.7"
+version = "0.1.8"
 description = "Plugin that allows the re-ordering of sidebar and tabs by dragging them into desired location within the UI."
 authors = [
     { name = "jneilliii", email = "jneilliii+github@gmail.com" },
