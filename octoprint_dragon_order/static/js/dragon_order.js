@@ -31,15 +31,18 @@ $(function() {
 					});
 				}
 
+				var octo_version = VERSION.match(/\d+/gm) || [];
+				var major = Number(octo_version[0]) || 0;
+				var minor = Number(octo_version[1]) || 0;
+				var patch = Number(octo_version[2]) || 0;
+
+				// gcodeviewer became a separate plugin in OctoPrint 1.4.1+
+				var gcodeviewer_link = (major > 1 || (major === 1 && (minor > 4 || (minor === 4 && patch >= 1)))) ? 'plugin_gcodeviewer_link' : 'gcodeviewer_link';
+
 				var new_tab_order = [];
 				$.each($('#tabs').sortable('toArray'), function(index, value){
 					if(value !== ''){
-						var octo_version = VERSION.match(/\d+/gm);
-						if (octo_version[0] == 1 && octo_version[1] > 3 && octo_version[2] > 0){
-							var new_value = value.replace('temp_link','temperature_link').replace('term_link','terminal_link').replace(/^gcode_link$/,'plugin_gcodeviewer_link').replace(/^(tab_)?(.+)_link$/g,'$2');
-						} else {
-							var new_value = value.replace('temp_link','temperature_link').replace('term_link','terminal_link').replace(/^gcode_link$/,'gcodeviewer_link').replace(/^(tab_)?(.+)_link$/g,'$2');
-						}
+						var new_value = value.replace('temp_link','temperature_link').replace('term_link','terminal_link').replace(/^gcode_link$/,gcodeviewer_link).replace(/^(tab_)?(.+)_link$/g,'$2');
 						new_tab_order.push(new_value);
 					}
 				});
